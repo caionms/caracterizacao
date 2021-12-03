@@ -273,6 +273,25 @@ Os componentes do JRE incluem a máquina virtual Java (JVM), bibliotecas de clas
    O java consegue descobrir a classe de um objeto, modificadores de acesso, superclasse, campos, construtores, métodos, etc. A linguagem também pode criar instancia da classe, obter e modificar a variaveis de instância, etc. Porém existem casos onde o seu programa necessita processar o próprio programa ou outros programa, para isso temos como o exemplo mais conhecido, a API Java Reflection. Essa API pode ser usada em casos como: um navegador de classes, um depurador, um construtor de GUI ou uma IDE, tal como Netbeans ou Eclipse.
 
   ### Gerenciamento de Ciclo de Vida
+   Podemos destacar dois ciclos de vida, o do produto que normalmente é divido em 7 estágios e do objeto em Java. Os 7 estágios do ciclo de vida de um produto são:
+   	<body>
+		<ol>
+			<li><b>LEVANTAMENTO DE REQUISITOS</b></li>
+			<li><b>ANÁLISE</b></li>
+			<li><b>PROJETO</b></li>
+			<li><b>IMPLEMENTAÇÃO</b></li>
+			<li><b>TESTES</b></li>
+			<li><b>IMPLANTAÇÃO</b></li>
+			<li><b>MANUTENÇÃO</b></li>
+		</ol>
+	</body>
+   Já o ciclo de vida de um objeto :
+   
+   + Antes de um objeto pode ser criado a partir de uma classe, a classe deve ser carregado. Para isso, o tempo de execução Java localiza a classe no disco (em um .classe Arquivo) e lê-lo na memória. Em seguida, Java procura por qualquer inicializadores estáticos que inicializar campos estáticos - campos que não pertencem a qualquer instância específica da classe, mas pertencem à própria classe e são compartilhados por todos os objetos criados a partir da classe. A classe é carregada pela primeira vez, você cria um objeto da classe ou a primeira vez que você acessar um campo estático ou método da classe. Quando você executa o a Principal método de uma classe, por exemplo, a classe é inicializado porque o a Principal método é estático. 
+   + Um objeto é criado a partir de uma classe quando você usa o Novo palavra-chave. Para inicializar a classe, Java aloca memória para o objeto e define uma referência para o objeto para que o tempo de execução Java pode acompanhar isso. Então Java chama a classe construtor, que é como um método, mas é chamado apenas uma vez: quando o objeto é criado. O construtor é responsável por fazer qualquer processamento necessário para inicializar o objeto - variáveis inicializar, abrir arquivos ou bancos de dados, e assim por diante. 
+   + O objeto vive sua vida, proporcionando acesso a seus métodos públicos e campos para quem quer e precisa deles. 
+   + Quando é hora para o objeto de morrer, o objeto é removido da memória, e Java deixa cair a sua referência interna para isso. Você não tem que destruir objetos si mesmo. Uma parte especial do tempo de execução Java chamado “coletor de lixo” se encarrega de destruir todos os objetos quando eles não estão mais em uso.
+  
   + Segurança 
   + Performance
   + Escalabilidade
@@ -316,3 +335,4 @@ Os componentes do JRE incluem a máquina virtual Java (JVM), bibliotecas de clas
 12. https://www.treinaweb.com.br/blog/conhecendo-variaveis-e-constantes-no-java
 13. https://www.devmedia.com.br/conheca-o-ambiente-de-execucao-java/32477
 14. https://www.redhat.com/pt-br/topics/cloud-native-apps/what-is-a-Java-runtime-environment
+15. https://faqcartx.info/programa%C3%A7%C3%A3o/41126-qual-%C3%A9-o-ciclo-de-vida-de-um-objeto-em-java.html
