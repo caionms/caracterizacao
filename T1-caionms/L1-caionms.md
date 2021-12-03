@@ -292,7 +292,61 @@ Os componentes do JRE incluem a máquina virtual Java (JVM), bibliotecas de clas
    + O objeto vive sua vida, proporcionando acesso a seus métodos públicos e campos para quem quer e precisa deles. 
    + Quando é hora para o objeto de morrer, o objeto é removido da memória, e Java deixa cair a sua referência interna para isso. Você não tem que destruir objetos si mesmo. Uma parte especial do tempo de execução Java chamado “coletor de lixo” se encarrega de destruir todos os objetos quando eles não estão mais em uso.
   
-  + Segurança 
+  ### Segurança
+   Desde que o código Java compilado foi desenvolvido para ser transportado em formato binário através da rede, segurança consiste em um tópico de extrema importância. Devido aos bytecodes do Java rodarem nas máquinas do usuário, existem considerações especiais a se fazer. Usuários que carregam arquivos de classe Java de servidores remotos, lugares possivelmente pouco seguros, precisam se certificar que o código Java carregado não pode derrubar o interpretador de bytecodes por realizar operações ilegais. Os níveis mais baixos do interpretador Java implementa segurança de várias formas:
+   #### Segurança através de publicação
+   O código fonte completo para ambos o interpretador e o compilador Java estão disponíveis para inspeção. Não é esperado que o usuário acredite na palavra dos desenvolvedores, de que a linguagem Java é segura. Auditorias de segurança do código do Java estão sendo efetuadas no momento.
+   #### Segurança por ser bem definido
+   A linguagem Java é rigorosa com relação as suas definições de linguagem:
+   
+   + Todas os tipos primitivos da linguagem são garantidas de serem de tamanho específico.
+   + Todas as operações são definidas para serem realizadas em uma ordem específica.
+   
+   Dois compiladores Java corretos, ou seja, com a sua implementação de acordo com a especificação, nunca vão gerar resultados diferentes na execução do programa. Isto é bastante diferente de C e C++, nos quais os tamanhos dos tipos primitivos são dependentes da máquina e do compilador, e a ordem de execução é indefinida exceto em casos especiais.
+   #### Segurança por falta de aritmética de ponteiros
+   A linguagem Java não possui aritmética de ponteiros, portanto programadores não podem forjar um ponteiro para memória. Todas as referências à métodos e variáveis instanciadas são feitas por nomes simbólicos. O usuário não pode criar código que possua deslocamentos suspeitos, nos quais pode acontecer de se apontar justamente para uma região de dados confidenciais. Usuários não podem criar código que destruam variáveis do sistema ou que acessem dados privados.
+   #### Segurança através de Garbage Collection
+   Garbage Collection faz os programas em Java ficarem tanto mais seguros quanto mais robustos. Dois bugs comuns em programas em C e C++ são:
+   
+   + Falhar na liberação de memória visto que não é mais necessária.
+   + Acidentalmente liberar o mesmo pedaço de memória duas ou mais vezes.
+   
+   Falhar na liberação da memória que não é mais acessada pode causar em um programa o uso crescente de memória. Acideltalmente liberando o mesmo espaço de memória ocasionalmente causa bugs de corrupção de memória que são difíceis de localizar. A linguagem Java elimina a necessidade de programadores se preocuparem com estas questões.
+   #### Segurança através de checagem em tempo de compilação rigorosa
+   O compilador Java realiza uma checagem extensiva e rigorosa durante tempo de compilação de forma a se ter o maior número de erros possível detectados pelo compilador. Os tipos na linguagem Java são rigorosos. Diferente de C e C++, os tipos do sistema não possuem nenhuma brecha:
+   
+   + Objetos não podem ser convertidos para uma subclasse sem uma explícita checagem em runtime.
+   + Todas as referências à métodos e variáveis são checadas para se ter certeza de que os objetos são do tipo apropriado. Em adição, o compilador checa se as barreiras de segurança, isto é, referências a variáveis do tipo private ou métodos de outras classes, não são violadas.
+   + Inteiros não podem ser convertidos para objetos, nem objetos serem convertidos para inteiros.
+
+   O compilador também assegura rigorosamente que o programa não acessa o valor de uma variável local não inicializada.
+   #### Verificação dos Arquivos de Classe
+   Mesmo o compilador realizando uma checagem nos tipos, existe ainda a possibilidade de ataque via o uso de um compilador "hostil". Aplicações tais como o browser HotJava não carregam o código fonte para depois compilá-lo. Estas aplicações carregam arquivos de classe já compilados. O browser HotJava não tem como determinar se os bytecodes produzidos foram produzidos por compilador confiável, ou se vieram de um adversário tentando explorar o interpretador.
+
+  Um problema adicional em tempo de compilação correponde a versão das classes em uso. Um usuário pode compilar com sucesso uma classe chamada MeuCofre para ser uma subclasse de Cofre. Mas a definição de Cofre pode ter mudado desde que a classe foi compilada. Métodos podem ter desaparecido ou mudado os argumentos, variáveis podem ter mudado seu tipo ou mudado de dinâmica(por objeto) para estática(por classe). A visibilidade de um método ou uma variável pode mudar de público para privado.
+
+  Todas as classes vindas de uma máquina remota estão sujeitas ao verificador. Este verificador se certifica que os arquivos de classe estão no formato correto. Os bytecodes são verificados utilizando um simples comprovador de teorema, o qual estabelece um conjunto de restrições estruturais nos bytecodes.
+
+  O verificador de bytecode também aumenta a performance do interpretador. A checagem em runtime que seria feita para cada instrução interpretada pode ser eliminada. Ao contrário, o interpretador pode assumir que esta checagem já foi realizada. Embora cada checagem individual seja inexpressiva, muitas instruções de máquina para a execução de cada instrução de bytecode são eliminadas.
+
+  Por exemplo, o interpretador já sabe que o código segue as seguintes restrições:
+  
+  + Não há Overflow nem Underflow na pilha.
+  + Todos os acessos e armazenamentos em registros são válidos.
+  + Os parâmetros de todas as instruções de bytecode estão corretas.
+  + Não existe nenhuma conversão ilegal de dados.
+
+  O verificador é independente do compilador Java. Embora este vá certificar todo o código gerado pelo compilador corrente, o verificador deve poder também certificar código que o compilador corrente não pode gerar. Qualquer conjunto de bytecodes que satisfaça o critério estrutural vai ser certificado pelo verificador.
+
+  O verificador é extremamente conservativo. Este vai recusar alguns arquivos de classe que um comprovador de teorema mais sofisticado certamente certificaria.
+
+  Outras linguagens podem ser compiladas em formato de classe. O verificador de bytecode, por não ser desenvolvido especificamente para a linguagem Java, permite aos usuários importar código de fora do firewall confidencialmente.
+  #### Gerenciador de Segurança
+  Os tópicos vistos anteriormente com relação a segurança no Java dizem respeito as camadas mais baixas de proteção fornecidas. Além destes níveis de proteção, existe ainda um objeto contido no ambiente de runtime do Java, um gerenciador de segurança, que fica trabalhando o tempo todo enquanto o sistema está rodando. O gerenciador de segurança deve aprovar todas as operações que serão potencialmente tratadas, antes delas poderem ser completadas. Se, por alguma razão, o gerenciador de segurança desabilitar alguma certa operação, este lança uma exceção SecurityException. Do contrário, a operação é realizada normalmente.
+
+   
+   
+  
   + Performance
   + Escalabilidade
   + Confiabilidade
@@ -336,3 +390,5 @@ Os componentes do JRE incluem a máquina virtual Java (JVM), bibliotecas de clas
 13. https://www.devmedia.com.br/conheca-o-ambiente-de-execucao-java/32477
 14. https://www.redhat.com/pt-br/topics/cloud-native-apps/what-is-a-Java-runtime-environment
 15. https://faqcartx.info/programa%C3%A7%C3%A3o/41126-qual-%C3%A9-o-ciclo-de-vida-de-um-objeto-em-java.html
+16. https://www.teclogica.com.br/seguranca-em-java/
+17. https://www.gta.ufrj.br/grad/flavio/security.html
