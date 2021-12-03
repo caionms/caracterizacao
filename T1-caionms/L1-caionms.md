@@ -13,9 +13,9 @@
 ## Apresentação e histórico
 
 [Java](https://www.java.com/pt-BR/) é uma linguagem de programação orientada a objetos. A linguagem foi criada por James Gosling e sua equipe da Sun Microsystems na década de 1990, sendo posteriormente adquirida pela Oracle. O Java teve como berço o Green Project, liderado pela James, além de Patrick Naughton e Mike Sheridan. O projeto tinha como objetivo viabilizar sua visão de futuro, onde haveria uma convergência dos computadores com os equipamentos e eletrodomésticos frequentemente usados pelas pessoas no seu dia-a-dia. 
-<br>
+<br><br>
 O protótipo dessa ideia foi o Star Seven, um controle remoto com uma interface gráfica touchscreen. Para esse novo equipamento foi desenvolvido uma linguagem de programação chamada de Oak. Com o "estouro" da internet, Gosling ficou encarregado de adaptar o Oak para a internet e o resultado desse trabalho foi a nova versão batizada de Java.
-<br>
+<br><br>
 A linguagem foi projetada para uso no ambiente distribuído da Internet. Ela foi projetada com a intenção intenção de permitir que os desenvolvedores escrevam o programa apenas uma vez e o executem por meio de qualquer dispositivo.
 
 ### Árvore evolutiva do Java:
@@ -344,12 +344,33 @@ Os componentes do JRE incluem a máquina virtual Java (JVM), bibliotecas de clas
   #### Gerenciador de Segurança
   Os tópicos vistos anteriormente com relação a segurança no Java dizem respeito as camadas mais baixas de proteção fornecidas. Além destes níveis de proteção, existe ainda um objeto contido no ambiente de runtime do Java, um gerenciador de segurança, que fica trabalhando o tempo todo enquanto o sistema está rodando. O gerenciador de segurança deve aprovar todas as operações que serão potencialmente tratadas, antes delas poderem ser completadas. Se, por alguma razão, o gerenciador de segurança desabilitar alguma certa operação, este lança uma exceção SecurityException. Do contrário, a operação é realizada normalmente.
 
-   
-   
+  #### Performance
+  No desenvolvimento de software, a linguagem de programação Java foi historicamente considerada mais lenta do que as linguagens tipadas de 3ª geração mais rápidas, como C e C ++. O principal motivo é o design de uma linguagem diferente, em que, após a compilação, os programas Java são executados em uma máquina virtual Java (JVM) ao invés de diretamente no processador do computador como código nativo, como fazem os programas C e C ++. O desempenho era motivo de preocupação porque muitos softwares de negócios foram escritos em Java depois que a linguagem rapidamente se tornou popular no final dos anos 1990 e no início dos anos 2000.
+
+  Desde o final da década de 1990, a velocidade de execução de programas Java melhorou significativamente com a introdução da compilação just-in-time (JIT) (em 1997 para Java 1.1), a adição de recursos de linguagem que suportam um código melhor análise e otimizações na JVM (como HotSpot tornando-se o padrão para JVM da Sun em 2000). A execução de bytecode Java em hardware, como o oferecido pelo Jazelle da ARM, também foi explorada para oferecer melhorias de desempenho significativas.
+
+  O desempenho de um programa Java compilado por bytecode Java depende de quão otimamente suas tarefas são gerenciadas pela máquina virtual Java host (JVM), e quão bem a JVM explora os recursos do hardware do computador e sistema operacional (SO) ao fazê-lo. Assim, qualquer teste de desempenho ou comparação de Java deve sempre relatar a versão, fornecedor, sistema operacional e arquitetura de hardware da JVM usada. De maneira semelhante, o desempenho do programa equivalente compilado nativamente dependerá da qualidade de seu código de máquina gerado, portanto, o teste ou comparação também deve relatar o nome, a versão e o fornecedor do compilador usado e suas diretivas de otimização do compilador ativadas .
   
-  + Performance
-  + Escalabilidade
-  + Confiabilidade
+  #### Escalabilidade
+  A escalabilidade é a capacidade de um sistema de atender um volume crescente de carga de processamento sem comprometer seriamente a performance ou o tempo de resposta para os usuários. A escalabilidade de um software é uma característica desejável em todo o sistema, em uma rede ou em um processo, que indica sua habilidade de manipular uma porção crescente de trabalho de forma uniforme, ou estar preparado para crescer. Quando falamos da escalabilidade do software em si estamos falando sobre ter um código e uma arquitetura que é fácil de dar manutenção, de aumentar suas funcionalidades, de várias pessoas trabalharem nele. Enquanto que escalabilidade de código tem a ver com como é fácil o código crescer e ainda ser administrável. Em geral a escalabilidade de código tem a ver com escalabilidade de equipe, porque é raro um código ser muito grande e mantido por uma pessoa, mas é possível ser só sobre o código.
+  
+  O Java fornece suporte de armazenamento de componentes Java EE como EJBs. Existem diversas ferramentas de suporte para depuração, análise, etc. As construções de linguagem permitem e exploram o potencial de otimização e se adaptam bem ao hardware moderno. Por outro lado o tempo de execução, em java, não está livre de sobrecarga e custos de funcionalidade desnecessários ou indesejados,em particular, há muita sobrecarga de espaço.
+
+  #### Confiabilidade
+  Um ponto importante de uma linguagem de programação é a sua confiabilidade, pois uma linguagem confiável possibilita a criação de programas mais seguros, mais simples de serem desenvolvidos e com maior facilidade de aceitação por parte do usuário. A confiabilidade nas linguagens pode ser percebida por diversos fatores como, por exemplo: a legibilidade, o tratamento de exceções, a verificação de tipos e a facilidade de escrita.
+  
+  Através do uso de interfaces, onde uma classe pode herdar características de uma superclasse e ainda implementar métodos de uma ou mais interfaces. Toda a variável ou método pertence a uma classe ou objeto só pode ser invocada através dessa classe ou objeto. Isso reforça seu forte caráter orientado a objeto.
+
+  O Java também garante a confiabilidade dos programas produzidos. O processo de compilação elimina uma gama enorme de possíveis problemas e uma checagem dinâmica (realizada em tempo de execução) contorna muitas situações que poderiam gerar erros.
+  
+  A confiabilidade dos programas escritos com o Java também é incrementada com um mecanismo eficiente para contornar situações inesperadas que podem ocorrer em tempo de execução. Essas condições excepcionais, chamas exceções, podem ser devidamente tratadas para evitar que o programa aborte, mesmo frente a situações de erro.
+  
+  Em Java não se tem acesso direto ao endereço de memória. Sendo assim, a linguagem Java se torna mais confiável.
+  
+  Outro ponto importante ainda sobre a confiabilidade é o tratamento de exceções, na qual as linguagens que dispõem de recursos para o programador tratar exceções, evitando que o programa seja finalizado inesperadamente e deixem o usuário “perdido”, são consideradas mais confiáveis e melhores também para o usuário. Com estas ferramentas o programador implementa um código que possa tratar estas exceções caso ocorram.
+  
+  Em Java, toda exceção é um objeto e existem classes prontas para o tratamento das mais variadas exceções. A superclasse de todas as exceções de Java é a classe java.lang.Throwable. Todos os objetos dessa classe ou de suas subclasses podem ser gerados ou capturados por meio do tratamento de exceções e assim facilitando o processo de tratar exceções e também tornando mais fácil sua visualização.
+  
   + Concorrência e Threading 
   + Custos
   _Custos aqui ... _
@@ -392,3 +413,8 @@ Os componentes do JRE incluem a máquina virtual Java (JVM), bibliotecas de clas
 15. https://faqcartx.info/programa%C3%A7%C3%A3o/41126-qual-%C3%A9-o-ciclo-de-vida-de-um-objeto-em-java.html
 16. https://www.teclogica.com.br/seguranca-em-java/
 17. https://www.gta.ufrj.br/grad/flavio/security.html
+18. https://en.wikipedia.org/wiki/Java_performance
+19. https://pt.stackoverflow.com/questions/90297/o-que-significa-escalabilidade-de-software
+20. https://pt.stackoverflow.com/questions/364945/o-que-%C3%A9-um-c%C3%B3digo-escal%C3%A1vel
+21. https://tableless.com.br/java-principais-caracteristicas/
+22. http://ttechtecnologia.blogspot.com/2013/08/confiabilidade-e-tratamento-de-excecoes.html
