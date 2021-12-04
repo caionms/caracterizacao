@@ -34,23 +34,64 @@ O [Elixir](http://elixir-lang.org/) foi criado em 2011 e criado por José Valim,
   ### Implementação
   Inicialmente escrito em Erlang, hoje é implementado com praticamente todo seu código na linguagem Elixir, onde é feita a compilação do código para a BEAM.
   
-  + Custos 
- _Custos aqui ... _
+  ### Modelo de tradução
+
+<body>
+	<p>
+		É uma linguagem executada através da Erlang VM, uma máquina virtual conhecida por criar aplicações distribuídas com baixa latência e tolerante a falhas. Por ser executado através dessa Virtual Machine, permite que os desenvolvedores utilizem todas as bibliotecas do Erlang enquanto desenvolvem com o Elixir.
+	</p>
+	<p>
+		O Erlang VM é executado como um processo de sistema operacional. Por padrão, ele executa um thread do SO por núcleo para atingir a utilização máxima da máquina. O número de threads e em quais núcleos eles são executados pode ser definido quando a VM é iniciada. Os processos Erlang são implementados inteiramente pela VM Erlang e não têm conexão com os processos do SO ou threads do SO. Portanto, mesmo se você estiver executando um sistema Erlang com mais de um milhão de processos, ele ainda será apenas um processo do sistema operacional e um thread por núcleo. Portanto, neste sentido, a VM Erlang é uma "máquina virtual de processo", enquanto o próprio sistema Erlang se comporta como um SO e os processos Erlang têm propriedades muito semelhantes aos processos do SO, por exemplo, isolamento.
+	</p>
+</body>
+  
+  ### Custos 
+  Por ser uma linguagem menos conhecida do que outras mais dinfundidas como a Linguagem 1 (JAVA) e sabendo que é gratuita, além dos custos básicos como infraestrutura e tempo. É necessário citar que a mão de obra para projetos nessa linguagem vai ser mais especializada do que em outros casos, tornando um pouco mais custoso e resultando em menores equipes. Porém, é válido destacar que o custo final de um projeto vai depender de vários outros fatores.
 
 ## Capacidades da Linguagem
-  + Metaprogramação
-  + Gerenciamento de Ciclo de Vida
-  + Segurança 
+
+  ###  Metaprogramação
+  O programador ao trabalhar com a linguagem consegue manipular a árvore sintática abstrata (AST) das expressões através de comandos. Torna-se possível definir macros para definir uma expressão que deve ser substituída em tempo de compilação. 
+  
+  ### Gerenciamento de Ciclo de Vida
+  Esse é gerenciado pela Virtual Machine e utiliza os mecanismos de garbage collection existentes no Erlang. Dessa forma, quando uma variável é declarada no código, após o fim da execução, o garbage collector tem a função de remove-la.
+  
+  ### Segurança 
+  Uma das características do Elixir é sua tolerância a falhas. Fornecendo mecanismos de segurança que permitem que a aplicação continue funcionando mesmo quando algo dá errado. Os processos alertam sobre uma falha nos processos dependentes, mesmo em outros servidores, para que possam corrigir o problema imediatamente.
+  
   + Performance
-  + Escalabilidade
+  
+  ### Escalabilidade
+  Elixir roda em cima da Máquina Virtual do Erlang (BEAM), tornando possível rodar a aplicação em múltiplos nós. Ao combinar esses fatores com o sistema distribuído torna-se um efeito colateral uma boa performance da aplicação.
+  
   + Confiabilidade
   + Concorrência e Threading 
   + Custos
   _Custos aqui ... _
 
 ## Produtividade do Desenvolvedor
-  + Frameworks e Contâiners
-  + Ferramentas Disponíveis
+
+  ### Frameworks e Contâiners
+  Assim como a Linguagem 1 (JAVA), existe um framework focado em testes. Nesse caso, a linguagem disponibiliza um framework chamado ExUnit para a realização de testes unitários e, ainda, possui um terminal interativo, o IEx (Elixir’s Interactive Shell), que oferece funcionalidades como:
+  
+  + Autocompletar;
+  + Histórico;
+  + Avaliação de expressões.
+
+E, como é visto em outras linguagens nesse formato imperativo de programar, é possível executar códigos com comandos e funções em tempo real. Isso é muito bom para quem está aprendendo a lidar com linguagem ou que possui uma grande demanda de projetos a serem executados.
+
+Outros Frameworks mais conhecidos do Elixir são:
+
+ + **Phoenix:** Permite criar aplicativos interativos na web rapidamente. Pode ser utilizado, portanto, para o desenvolvimento web, de APIs e aplicativos HTML5;
+ + **Nerves:** Trata-se da plataforma e infraestrutura de código aberto que permite criar, implantar e gerenciar dispositivos IoT com total segurança, velocidade e em escala. Também serve para Embedded;
+ + **Plug:** Destinado para aplicações na web;
+ + **Sugar:** Muito utilizado para desenvolvimento web, garantindo rapidez, facilidade e eficácia ao projeto.
+  
+  ### Ferramentas Disponíveis
+  O Elixir pode ser utilizado desde uma aplicação web até em um sistema embarcado. Tem um grande ecossistema e boas ferramentas para facilitar a vida dos desenvolvedores. 
+  
+  Ele conta, por exemplo, com o Mix, uma ferramenta de compilação que fornece tarefas para criar, compilar, testar aplicativos e gerenciar projetos e dependências. E através do Hex, seu package manager oficial, é possível encontrar uma quantidade gigante de libs, incluindo as do Erlang.
+  
   + Sintaxe, Semântica e Operações Predefinidas
     + Legibilidade
     + Redigibilidade
@@ -58,7 +99,12 @@ O [Elixir](http://elixir-lang.org/) foi criado em 2011 e criado por José Valim,
 
 ## Ecossistema
   + Maturidade
-  + Comunidade
+  
+  ### Comunidade
+  Apesar de ser uma linguagem relativamente nova, possui uma grande biblioteca de projetos open-source mantida pela própria comunidade e empresas que usam a linguagem no seu cotidiano. Destaca-se também por desenvolvedores com maior experiência sempre estão ajudando e compartilhando os seus conhecimentos, em redes sociais, meetups e video tutoriais.
+  
+  Como processo natural desse engajamento surgem as conferências, como por exemplo: ElixirConf US, ElixirConf EU, ElixirConfLA. Demonstrando que em todos os cantos o funcional chamou atenção dos desenvolvedores de todo mundo. Nesse movimento o Brasil conta com um evento próprio e será sobre ele que vamos falar um pouco mais aqui.
+  
   + Governança
   + Fragmentação
 
@@ -77,3 +123,5 @@ O [Elixir](http://elixir-lang.org/) foi criado em 2011 e criado por José Valim,
 6. https://sites.google.com/site/profferdesiqueiraprogconc/aulas/1-introducao-a-programacao-concorrente
 7. https://controlf5it.com.br/blog/programacao-distribuida-o-que-e-e-onde-e-usada/
 8. https://www.ev.org.br/cursos/introducao-a-programacao-orientada-a-objetos-poo
+9. https://pt.stackoverflow.com/questions/252572/duck-type-em-elixir
+10. https://latam.sinch.com/blog/elixir-brasil-o-funcional-encontra-se-aqui/
