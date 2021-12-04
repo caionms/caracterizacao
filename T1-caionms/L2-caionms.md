@@ -57,14 +57,18 @@ O [Elixir](http://elixir-lang.org/) foi criado em 2011 e criado por José Valim,
   Esse é gerenciado pela Virtual Machine e utiliza os mecanismos de garbage collection existentes no Erlang. Dessa forma, quando uma variável é declarada no código, após o fim da execução, o garbage collector tem a função de remove-la.
   
   ### Segurança 
-  Uma das características do Elixir é sua tolerância a falhas. Fornecendo mecanismos de segurança que permitem que a aplicação continue funcionando mesmo quando algo dá errado. Os processos alertam sobre uma falha nos processos dependentes, mesmo em outros servidores, para que possam corrigir o problema imediatamente.
+  Uma das características do Elixir é sua tolerância a falhas. Fornecendo mecanismos de segurança que permitem que a aplicação continue funcionando mesmo quando algo dá errado. Os processos alertam sobre uma falha nos processos dependentes, mesmo em outros servidores, para que possam corrigir o problema imediatamente. Além disso, o mecanismo de garbage collection assegura memory safety em Elixir.
   
-  + Performance
+  ### Performance
+  O Elixir se mostra bastante eficiente em casos onde são utilizados algoritmos favoráveis à concorrência. Entretanto, no geral é mais lento que outras linguagens compiladas como a Linguagem 1 (JAVA).
   
   ### Escalabilidade
   Elixir roda em cima da Máquina Virtual do Erlang (BEAM), tornando possível rodar a aplicação em múltiplos nós. Ao combinar esses fatores com o sistema distribuído torna-se um efeito colateral uma boa performance da aplicação.
   
-  + Confiabilidade
+  ### Confiabilidade
+  Mesmo sendo uma linguagem relativamente nova, a máquina virtual onde é rodada possui um pouco mais tempo de "vida". A cada dia que passa, a comunidade de Elixir cresce, resultando em mais desenvolvedores focados em identificar e corrigir os problemas apresentados. Além de ser usado por empresas renomadas como 
+  
+  Após 9 anos desde sua criação, executando numa máquina virtual com ainda mais tempo de existência, e criando uma comunidade significativa de contribuidores para o desenvolvimento e uso da linguagem identificando e corrigindo bugs com prontidão, pode-se dizer com segurança que Elixir é uma linguagem suficientemente confiável para ser usada para escrever aplicativos usados em produção em grandes organizações como Pinterest e Discord.
   + Concorrência e Threading 
   + Custos
   _Custos aqui ... _
