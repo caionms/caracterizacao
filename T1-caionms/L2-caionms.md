@@ -283,7 +283,7 @@ Nem todas as expressões são permitidas nas cláusulas de guarda, mas apenas al
 	...> end
 	"Not an Int"
  #### case
- Se for necessário testar várias condições, podemos usar o case:
+ Se for necessário testar várias probabilidades de valores, podemos usar o case:
 	
  	iex> case {:ok, "Hello World"} do
  	...> {:ok, result} -> result
@@ -292,12 +292,54 @@ Nem todas as expressões são permitidas nas cláusulas de guarda, mas apenas al
  	...> end
 	"Hello World"
  A variável _ é uma inclusão importante nas instruções case. Sem ela, a falha em encontrar uma correspondência gerará um erro. o _ funiona como o else que corresponderá a “todo o resto”. 
- #### case
- Se for necessário testar várias condições, podemos usar o case:
+	
+ Outra característica interessante do case é seu suporte para cláusulas de guard:
+	
+ 	iex> case {1, 2, 3} do
+ 	...> {1, x, 3} when x > 0 ->
+ 	...>	"Will match"
+ 	...> _ ->
+ 	...>	"Won't match"
+ 	...> end
+	"Will match"
+	
+	
+ #### cond
+ Quando precisamos combinar condições em vez de valores, podemos nos voltar para cond, que funciona como  else if ou elsif de outras linguagens:
+	
+ 	iex> cond do
+ 	...> 2 + 2 == 5 ->
+ 	...>	"This will not be true"
+ 	...> 2 * 2 == 3 ->
+ 	...>	"Nor this"
+ 	...> 1 + 1 == 2 ->
+ 	...>	"But this will"
+ 	...> end
+	"But this will"
 
-    + Legibilidade
-    + Redigibilidade
-  + Custos 
+ #### with
+ A forma especial with é útil quando você pode usar uma instrução case aninhada ou situações que não podem ser conectadas de forma limpa. A expressão with é composta pelas palavras-chave, os geradores e, finalmente, uma expressão:
+	
+ 	iex> user = %{first: "Sean", last: "Callan"}
+ 	%{first: "Sean", last: "Callan"}
+ 	...> with {:ok, first} <- Map.fetch(user, :first),
+ 	...>	{:ok, last} <- Map.fetch(user, :last),
+ 	...>	do: last <> ", " <> first
+	"Callan, Sean"
+ No caso de uma expressão não corresponder, o valor não correspondente será retornado:
+	
+ 	iex> user = %{first: "doomspork"}
+ 	%{first: "doomspork"}
+ 	...> with {:ok, first} <- Map.fetch(user, :first),
+ 	...>	{:ok, last} <- Map.fetch(user, :last),
+ 	...>	do: last <> ", " <> first
+	:error
+ 
+#### Obs:
+ Vale ressaltar que no Elixir não existem loops, as repetições são feitas por recursão.
+	
+ ####  Legibilidade e Redigibilidade
+  A linguagem tem uma sintaxe com boa legibilidade, com possibilidades para boas melhoras. Assim como o Ruby, linguagem que foi uma inspiração, possui um design moderno, que permite escrever programas de modo natural ao problema. Tal fato pode ser notado em situações como não precisar utilizar o retorno explicito em funções ou utilizar Pparênteses obrigatoriamente. Existem ainda opções para tornar o código mais legível como o piper operator, que torna a legbilidade consideravelmente mais alta.
 
 ## Ecossistema
   + Maturidade
