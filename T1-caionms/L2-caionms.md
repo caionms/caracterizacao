@@ -342,16 +342,18 @@ Nem todas as expressões são permitidas nas cláusulas de guarda, mas apenas al
   A linguagem tem uma sintaxe com boa legibilidade, com possibilidades para boas melhoras. Assim como o Ruby, linguagem que foi uma inspiração, possui um design moderno, que permite escrever programas de modo natural ao problema. Tal fato pode ser notado em situações como não precisar utilizar o retorno explicito em funções ou utilizar Pparênteses obrigatoriamente. Existem ainda opções para tornar o código mais legível como o piper operator, que torna a legbilidade consideravelmente mais alta.
 
 ## Ecossistema
-  + Maturidade
+	
+  ### Maturidade
+  Mesmo sendo uma linguagem bastante recente comparada a outras opções do mercado, pode-se notar o comprometimento e maturidade da equipe, visto que empresas renomadas como a Adobe utilizam a linguagem. Além dos diversos produtos mundialmente conhecidos que foram criados utilizando o Elixir também como o [WhatsApp](https://www.whatsapp.com/) e o [Pinterest](https://br.pinterest.com/), o que demanda manuntenções e atualizações recorrentes e consequentemente gerando experiência e maturidade para a equipe.
   
   ### Comunidade
   Apesar de ser uma linguagem relativamente nova, possui uma grande biblioteca de projetos open-source mantida pela própria comunidade e empresas que usam a linguagem no seu cotidiano. Destaca-se também por desenvolvedores com maior experiência sempre estão ajudando e compartilhando os seus conhecimentos, em redes sociais, meetups e video tutoriais.
   
   Como processo natural desse engajamento surgem as conferências, como por exemplo: ElixirConf US, ElixirConf EU, ElixirConfLA. Demonstrando que em todos os cantos o funcional chamou atenção dos desenvolvedores de todo mundo. Nesse movimento o Brasil conta com um evento próprio e será sobre ele que vamos falar um pouco mais aqui.
   
-  + Governança
-  + Fragmentação
-
+  ### Governança
+  A governança do Elixir é pela Erlang Ecosystem Foundation [EEF](https://erlef.org/).
+	
 ---
 
 ## Informações Adicionais
