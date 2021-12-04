@@ -14,7 +14,7 @@
 
 O [Elixir](http://elixir-lang.org/) foi criado em 2011 e criado por José Valim, através de um projeto de pesquisa e desenvolvimento da empresa de consultoria de software Plataformatec. Seu código é executado através de processos isolados, que trocam informações por meio de mensagens. A linguagem de programação Elixir, atualmente  na versão 1.6, teve sua primeira versão lançada em 2014. Trata-se de uma linguagem com código aberto que é executada na Máquina Virtual Erlang (Erlang VM), cujo principal objetivo é oferecer uma programação produtiva para aplicações distribuídas seguras e de fácil manutenção, potencializando os recursos da máquina virtual sobre a qual está fundada sem custos de performance. Ou seja, o foco principal da linguagem é fornecer, de forma produtiva, ferramentas para construir aplicações distribuídas e de fácil manutenção.
 
-### Árvore evolutiva do Java:
+### Árvore evolutiva do Elixir:
 ![image](./elixir.png)
 
 ## Características da Linguagem
