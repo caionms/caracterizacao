@@ -441,7 +441,7 @@ Os componentes do JRE incluem a máquina virtual Java (JVM), bibliotecas de clas
   + **Espaço em branco:** Assim como usar parágrafo e espaçamento entre palavras corretos em línguas naturais torna-os muito mais fáceis de ler, o uso apropriado de linhas em branco e espaçamento interno em uma declaração pode torná-los muito mais legíveis. Alguns IDEs, como o NetBeans, irão recuar seu programa em qualquer um dos estilos.
   + **Nomes com significados:** Variáveis, métodos, classes, etc. devem ter nomes que signifiquem algo para o leitor. Use apenas nomes como "a", "b" e "c" quando não houver nenhum significado inerente em uma variável - é apenas um número abstrato. Veja Nomes para uma discussão mais detalhada.
   + **Simplicidade:** Sempre tente tornar o programa o mais simples possível. Resista à tentação de ser inteligente. Em algumas situações, a forma mais exlusiva ou mais rápida para se resolver um problema pode não ser a mais lara para a maioria dos programadores.
-  + **As convenções são importantes a seguir:** Existem nomenclatura, formatação, documentação e convenções de uso padrão para Java. O uso dessas convenções torna o código-fonte do programa muito mais fácil para outras pessoas lerem.
+  + **As convenções são importantes:** Existem nomenclatura, formatação, documentação e convenções de uso padrão para Java. O uso dessas convenções torna o código-fonte do programa muito mais fácil para outras pessoas lerem.
 
 ## Ecossistema
 
