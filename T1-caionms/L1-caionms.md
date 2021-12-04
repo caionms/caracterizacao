@@ -154,110 +154,6 @@ A linguagem foi projetada para uso no ambiente distribuído da Internet. Ela foi
 	</p>
 </body>
 
-### Estruturas de controle
-
-<body>
-	<p>
-		Controle de fluxo é a habilidade de ajustar a maneira como um programa realiza suas tarefas. Por meio de instruções especiais, chamadas comandos, essas tarefas podem ser executadas seletivamente, repetidamente ou excepcionalmente. Não fosse o controle de fluxo, um programa poderia executar apenas uma única seqüência de tarefas, perdendo completamente uma das características mais interessantes da programação: a dinâmica.
-	</p>
-	<p>
-		Podemos classificar os comandos aceitos pela linguagem Java em basicamente quatro categorias: 
-	</p>
-	<p>
-		<ol>
-			<li>
-				Tomada de decisões: <code>if-else, switch-case</code>
-			</li>
-			<li>
-				Laços ou repetições: <code>for, while, do-while</code>
-			</li>
-			<li>
-				Apontamento e tratamento de excessões: <code>try-catch-finally, throw</code>
-			</li>
-			<li>
-				Outros: <code>break, continue, label:, return</code>
-			</li>
-		</ol>
-	</p>
-</body>
-
-#### Execução Condicional
-
-<body>
-	<p>
-		A forma mais simples de controle de fluxo é o comando if-else. Ele é empregado para executar seletivamente ou condicionalmente um outro comando mediante um critério de seleção. Esse critério é dado por uma expressão, cujo valor resultante deve ser um dado do tipo booleano, isto é, true ou false. Se esse valor for true, então o outro comando é executado; se for false, a excecussão do programa segue adiante. 
-	</p>
-	<p>
-		Uma variação do comando if-else permite escolher alternadamente entre dois outros comandos a executar. Nesse caso, se o valor da expressão condicional que define o critério de seleção for true, então o primeiro dos outros dois comandos é executado, do contrário, o segundo. 
-	</p>
-</body>
-
-#### Execução Seletiva de Múltiplos Comandos
-
-<body>
-	<p>
-		Frequentemente, desejamos que um único comando (ou único bloco de comandos) de uma lista seja executado mediante um dado critério. Isso pode ser feito através do aninhamento ou acoplamento de vários comandos if-else.
-	</p>
-	<p>
-		A presença do último else, juntamente com seu comando, é opcional. Neste código, o [comando 1] será executado (e os demais saltados) caso a primeira condição seja true, o [comando 2] será executado (e os demais saltados) caso a primeira condição seja false e a segunda condição seja true, e assim sucessivamente. O [comando n] (se houver) somente será executado (e os demais saltados) caso todas as condições sejam false. 
-	</p>
-</body>
-
-#### Execução Seletiva por Valores
-
-<body>
-	<p>
-		Assim como no caso execução seletiva de múltiplos comandos, há situações em que se sabe de antemão que as condições assumem o valor true de forma mutuamente exclusiva, isto é, apenas uma entre as condições sendo testadas assume o valor true num mesmo momento. Nesses casos, a linguagem Java (como também as linguagem C, C++ e Pascal) provê um comando de controle de fluxo bastante poderoso. 
-	</p>
-	<p>
-		A [expressão] pode ser qualquer expressão válida. Esta é avaliada e o seu valor resultante é comparado com as constantes distintas [constante 1], [constante 2], ..., [constante n]. Caso esse valor seja igual a uma dessas constantes, o respectivo comando é executado (e todos os demais são saltados). Se o valor for diferente de todas essas constantes, então o comando presente sob o rótulo default: é executado (e todos os demais são saltados), caso este esteja presente.
-	</p>
-</body>
-
-#### Laço de iteração enquanto/faça
-
-<body>
-	<p>
-		Frequentemente, desejamos que uma tarefa seja executada repetidamente por um programa enquanto uma dada condição seja verdadeira. Isso é possível pela utilização do comando while. Este comando avalia uma expressão condicional, que deve resultar no valor true ou false. Se o valor for true, então o comando subjacente é executado; se a expressão for false, então o comando é saltado e a execução prossegue adiante. A diferença é que após executar o comando subjacente, a expressão condicional é novamente avaliada e seu resultado novamente considerado. Desse modo a execução do comando subjacente se repetirá, até que o valor da expressão condicional seja false. Observe, porém, que a expressão é avaliada antes de uma possível execução do comando subjacente, o que significa que esse comando pode jamais ser executado. 
-	</p>
-	<p>
-		Uma das observações importantes é sempre certificar que não ocorra o laço infinito (um laço que nunca para, pois a condição sempre é verdadeira). Caso tenha alguma chance de entrar no laço infinito, coloque um contador ou user o laço for. 
-	</p>
-</body>
-
-#### Laço de iteração faça/enquanto
-
-<body>
-	<p>
-		Um outro tipo de laço de repetição, similar ao enquanto/faça, é o laço faça/enquanto, este é introduzido por um par de comandos do/while.
-	</p>
-	<p>
-		Diferente do laço enquanto/faça, este tipo de laço de repetição executa o comando e em seguida avalia a expressão condicional. A repetição ocorre se o valor dessa expressão for true. Se esse valor for false, a execução prossegue adiante do while.
-	</p>
-</body>
-
-#### Laço de iteração com contagem
-
-<body>
-	<p>
-		Em certas situações, precisamos de laços de repetições nos quais alguma variável é usada para contar o número de iterações. Para essa finalidade, temos o laço for. Este é o tipo de laço mais geral e mais complicado disponível na linguagem Java. 
-	</p>
-	<p>
-		Isto que dizer que o laço for avalia inicialmente a expressão de inicialização. Em seguida, avalia a expressão condicional. Se o valor desta for true, então o comando é executado,  a segunda expressão é avaliada em seguida, e finalmente o laço volta a avaliar novamente a expressão condicional. Do contrário, se o valor da expressão for false, a execução prossegue adiante do laço for. Este arranjo é muito conveniente para manter variáveis de contagem.
-	</p>
-</body>
-
-#### Break e continue
-
-<body>
-	<p>
-		O comando break é usado para interromper a execução de um dos laços de iteração vistos acima ou de um comando switch. Este comando é comumente utilizado para produzir a parada de um laço mediante a ocorrencia de alguma condição específica, antes da chegada do final natural do laço.
-	</p>
-	<p>
-		O comando continue tem a função de pular direto para final do laço, mas em vez de interromper o laço como no break, ele continua executando o próximo passo do laço. Não vamos ficar estudando o uso de continue por ser puco usual na programação estruturada. 
-	</p>
-</body>
-
   ### Ambiente de Execução
    O Java™ Runtime Environment (JRE), também conhecido por ambiente de execução Java, é um conjunto de componentes para criar e executar aplicações Java. Ele está incluído no   kit de desenvolvimento Java (JDK).
 Os componentes do JRE incluem a máquina virtual Java (JVM), bibliotecas de classe Java e o carregador de classes Java. Os JDKs são usados para desenvolver softwares Java, os JREs oferecem ferramentas de programação e tecnologias de implantação, e as JVMs executam programas nessa linguagem.
@@ -396,7 +292,142 @@ Os componentes do JRE incluem a máquina virtual Java (JVM), bibliotecas de clas
   ### Ferramentas Disponíveis
    Existem uma infinidade de ferramentas disponíveis para a linguagem, que podem auxiliar o desenvolvedor na entrega de um produto muito melhor, facilitando e melhorando diversas etapas do desenvolvimento de um software. Podemos citar ferramentas que auxiliam na compilação, configuração e deploy de aplicações, como o Eclipse, pois faz uso de um script ou XML, mas o usuário normalmente não tem conhecimento do que está ocorrendo por trás. Ou ferramentas que auxiliam nos testes de software, como o JUnit, que facilitam na manutenção e segurança do código.
   
-  + Sintaxe, Semântica e Operações Predefinidas
+  ### Sintaxe, Semântica e Operações Predefinidas
+   
+   #### Palavras reservadas
+   Como qualquer linguagem de programação, a linguagem Java designa determinadas palavras que o compilador reconhece como especiais. Por essa razão, você não pode usá-las para nomear suas construções Java. A lista de palavras reservadas é surpreendentemente curta:
+   
+   	abstract, assert, boolean, break, byte, case, catch, char, class, const, continue, default, do, double, else, enum, extends, final, finally, float, para, goto, if, implements, import, instanceof, int, interface, long, native, new, package, private, protected, public, return, short, static, strictfp, super, switch, synchronized, this, throw, throws, transient, try, void, volatile, while
+   Observe que true, false e null são tecnicamente palavras não reservadas. Embora sejam literais, elas estão na lista porque não é possível usá-las para nomear construções Java.
+    
+   #### Estrutura de uma classe
+   Uma classe é um blueprint para uma entidade discreta (objeto) que contém atributos e comportamentos. A classe define a estrutura básica do objeto e, no tempo de execução, seu aplicativo cria uma instância do objeto. Um objeto tem um limite e um estado nítidos e pode fazer ações quando corretamente solicitado. Cada linguagem orientada a objetos possui regras sobre como definir uma classe. No Java, classes são definidas da seguinte forma:
+   
+   	public class NomeClasse extends SuperClasse implements Interface {
+ 		private String atributoClasseString;
+		
+		public NomeClasse(String variavel) {
+    			this.atributoClasseString = variavel;
+		}
+		
+		public int quantidadeDeLetrasDoAtributo() {
+			int tamanho = this.atributoClasseString.length();
+			return tamanho;
+		}
+		
+		// Isso é um comentário
+		/* Isso também */
+		/* E
+		   Isso
+		   Também */
+	}	
+   Temos então uma classe que possui um modificador de visibilidade (public, private, default ou protected), seu nome, uma possível super classe e possíveis interfaces. No contéudo da classe, temos um atributo que possui também um modificador, seu tipo e seu nome, podendo ser instânciado um valor default (= "teste"). Temos também, um método que possui seu modificador, seu tipo de retorno e um nome, podendo ter parâmetros entre parênteses. Dentro do método, caso seu tipo de retorno não seja void, é preciso retornar um valor nulo ou do mesmo tipo do retorno.
+   
+   #### Estruturas de controle
+
+<body>
+	<p>
+		Controle de fluxo é a habilidade de ajustar a maneira como um programa realiza suas tarefas. Por meio de instruções especiais, chamadas comandos, essas tarefas podem ser executadas seletivamente, repetidamente ou excepcionalmente. Não fosse o controle de fluxo, um programa poderia executar apenas uma única seqüência de tarefas, perdendo completamente uma das características mais interessantes da programação: a dinâmica.
+	</p>
+	<p>
+		Podemos classificar os comandos aceitos pela linguagem Java em basicamente quatro categorias: 
+	</p>
+	<p>
+		<ol>
+			<li>
+				Tomada de decisões: <code>if-else, switch-case</code>
+			</li>
+			<li>
+				Laços ou repetições: <code>for, while, do-while</code>
+			</li>
+			<li>
+				Apontamento e tratamento de excessões: <code>try-catch-finally, throw</code>
+			</li>
+			<li>
+				Outros: <code>break, continue, label:, return</code>
+			</li>
+		</ol>
+	</p>
+</body>
+
+##### Execução Condicional
+
+<body>
+	<p>
+		A forma mais simples de controle de fluxo é o comando if-else. Ele é empregado para executar seletivamente ou condicionalmente um outro comando mediante um critério de seleção. Esse critério é dado por uma expressão, cujo valor resultante deve ser um dado do tipo booleano, isto é, true ou false. Se esse valor for true, então o outro comando é executado; se for false, a excecussão do programa segue adiante. 
+	</p>
+	<p>
+		Uma variação do comando if-else permite escolher alternadamente entre dois outros comandos a executar. Nesse caso, se o valor da expressão condicional que define o critério de seleção for true, então o primeiro dos outros dois comandos é executado, do contrário, o segundo. 
+	</p>
+</body>
+
+##### Execução Seletiva de Múltiplos Comandos
+
+<body>
+	<p>
+		Frequentemente, desejamos que um único comando (ou único bloco de comandos) de uma lista seja executado mediante um dado critério. Isso pode ser feito através do aninhamento ou acoplamento de vários comandos if-else.
+	</p>
+	<p>
+		A presença do último else, juntamente com seu comando, é opcional. Neste código, o [comando 1] será executado (e os demais saltados) caso a primeira condição seja true, o [comando 2] será executado (e os demais saltados) caso a primeira condição seja false e a segunda condição seja true, e assim sucessivamente. O [comando n] (se houver) somente será executado (e os demais saltados) caso todas as condições sejam false. 
+	</p>
+</body>
+
+##### Execução Seletiva por Valores
+
+<body>
+	<p>
+		Assim como no caso execução seletiva de múltiplos comandos, há situações em que se sabe de antemão que as condições assumem o valor true de forma mutuamente exclusiva, isto é, apenas uma entre as condições sendo testadas assume o valor true num mesmo momento. Nesses casos, a linguagem Java (como também as linguagem C, C++ e Pascal) provê um comando de controle de fluxo bastante poderoso. 
+	</p>
+	<p>
+		A [expressão] pode ser qualquer expressão válida. Esta é avaliada e o seu valor resultante é comparado com as constantes distintas [constante 1], [constante 2], ..., [constante n]. Caso esse valor seja igual a uma dessas constantes, o respectivo comando é executado (e todos os demais são saltados). Se o valor for diferente de todas essas constantes, então o comando presente sob o rótulo default: é executado (e todos os demais são saltados), caso este esteja presente.
+	</p>
+</body>
+
+##### Laço de iteração enquanto/faça
+
+<body>
+	<p>
+		Frequentemente, desejamos que uma tarefa seja executada repetidamente por um programa enquanto uma dada condição seja verdadeira. Isso é possível pela utilização do comando while. Este comando avalia uma expressão condicional, que deve resultar no valor true ou false. Se o valor for true, então o comando subjacente é executado; se a expressão for false, então o comando é saltado e a execução prossegue adiante. A diferença é que após executar o comando subjacente, a expressão condicional é novamente avaliada e seu resultado novamente considerado. Desse modo a execução do comando subjacente se repetirá, até que o valor da expressão condicional seja false. Observe, porém, que a expressão é avaliada antes de uma possível execução do comando subjacente, o que significa que esse comando pode jamais ser executado. 
+	</p>
+	<p>
+		Uma das observações importantes é sempre certificar que não ocorra o laço infinito (um laço que nunca para, pois a condição sempre é verdadeira). Caso tenha alguma chance de entrar no laço infinito, coloque um contador ou user o laço for. 
+	</p>
+</body>
+
+##### Laço de iteração faça/enquanto
+
+<body>
+	<p>
+		Um outro tipo de laço de repetição, similar ao enquanto/faça, é o laço faça/enquanto, este é introduzido por um par de comandos do/while.
+	</p>
+	<p>
+		Diferente do laço enquanto/faça, este tipo de laço de repetição executa o comando e em seguida avalia a expressão condicional. A repetição ocorre se o valor dessa expressão for true. Se esse valor for false, a execução prossegue adiante do while.
+	</p>
+</body>
+
+##### Laço de iteração com contagem
+
+<body>
+	<p>
+		Em certas situações, precisamos de laços de repetições nos quais alguma variável é usada para contar o número de iterações. Para essa finalidade, temos o laço for. Este é o tipo de laço mais geral e mais complicado disponível na linguagem Java. 
+	</p>
+	<p>
+		Isto que dizer que o laço for avalia inicialmente a expressão de inicialização. Em seguida, avalia a expressão condicional. Se o valor desta for true, então o comando é executado,  a segunda expressão é avaliada em seguida, e finalmente o laço volta a avaliar novamente a expressão condicional. Do contrário, se o valor da expressão for false, a execução prossegue adiante do laço for. Este arranjo é muito conveniente para manter variáveis de contagem.
+	</p>
+</body>
+
+##### Break e continue
+
+<body>
+	<p>
+		O comando break é usado para interromper a execução de um dos laços de iteração vistos acima ou de um comando switch. Este comando é comumente utilizado para produzir a parada de um laço mediante a ocorrencia de alguma condição específica, antes da chegada do final natural do laço.
+	</p>
+	<p>
+		O comando continue tem a função de pular direto para final do laço, mas em vez de interromper o laço como no break, ele continua executando o próximo passo do laço. Não vamos ficar estudando o uso de continue por ser puco usual na programação estruturada. 
+	</p>
+</body>
+
+  
     + Legibilidade
     + Redigibilidade
   + Custos 
@@ -440,3 +471,4 @@ Os componentes do JRE incluem a máquina virtual Java (JVM), bibliotecas de clas
 24. https://www.redhat.com/pt-br/topics/cloud-native-apps/what-is-a-Java-framework
 25. https://www.dca.fee.unicamp.br/cursos/PooJava/graphic/containers.html
 26. https://www.devmedia.com.br/principais-ferramentas-de-apoio-ao-desenvolvimento-java/34126
+27. https://developer.ibm.com/br/tutorials/j-introtojava1/
