@@ -192,7 +192,7 @@ Outros Frameworks mais conhecidos do Elixir são:
 	</p>
 </body> 
 
-##### Nomes especiais
+   ##### Nomes especiais
 
 <body>
 	<p>
@@ -255,6 +255,45 @@ Temos também os Operadores de comparação, a linguagem fornece os seguintes op
 + <code>>=</code> - Melhor que ou igual a
 	
 A única diferença entre == e === é que === é estrita quando se trata de comparar inteiros e flutuantes. != e !== agem como a negação de == e ===, respectivamente.
+	
+### Guards
+Os guardas são uma forma de aumentar a correspondência de padrões com verificações mais complexas. Eles são permitidos em um conjunto predefinido de construções onde a correspondência de padrões é permitida, como definições de função, cláusulas de caso e outros.
+
+Nem todas as expressões são permitidas nas cláusulas de guarda, mas apenas algumas delas. Esta é uma escolha deliberada. Desta forma, Elixir (e Erlang) pode garantir que nada de ruim aconteça durante a execução de guardas e nenhuma mutação aconteça em qualquer lugar. Também permite que o compilador otimize o código relacionado aos guardas de forma eficiente.
+
+### Estruturas de controle
+	
+ #### if and unless
+	
+ 	iex> if String.valid?("Hello") do
+ 	...>	"Valid string!"
+	...> else
+  	...>	"Invalid string."
+	...> end
+	"Valid string!"
+
+ 	iex> if "a string value" do
+ 	...>	"Truthy"
+	...> end
+	"Truthy"
+ Usar unless é como if só funciona no negativo:
+
+	iex> unless is_integer("hello") do
+ 	...>	"Not an Int"
+	...> end
+	"Not an Int"
+ #### case
+ Se for necessário testar várias condições, podemos usar o case:
+	
+ 	iex> case {:ok, "Hello World"} do
+ 	...> {:ok, result} -> result
+ 	...> {:error} -> "Uh oh!"
+ 	...> _ -> "Catch all"
+ 	...> end
+	"Hello World"
+ A variável _ é uma inclusão importante nas instruções case. Sem ela, a falha em encontrar uma correspondência gerará um erro. o _ funiona como o else que corresponderá a “todo o resto”. 
+ #### case
+ Se for necessário testar várias condições, podemos usar o case:
 
     + Legibilidade
     + Redigibilidade
@@ -288,3 +327,5 @@ A única diferença entre == e === é que === é estrita quando se trata de comp
 8. https://www.ev.org.br/cursos/introducao-a-programacao-orientada-a-objetos-poo
 9. https://pt.stackoverflow.com/questions/252572/duck-type-em-elixir
 10. https://latam.sinch.com/blog/elixir-brasil-o-funcional-encontra-se-aqui/
+11. https://elixirschool.com/en/lessons/basics/control_structures#with-3
+	
