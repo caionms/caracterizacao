@@ -262,9 +262,6 @@ A linguagem foi projetada para uso no ambiente distribuído da Internet. Ela foi
    O Java™ Runtime Environment (JRE), também conhecido por ambiente de execução Java, é um conjunto de componentes para criar e executar aplicações Java. Ele está incluído no   kit de desenvolvimento Java (JDK).
 Os componentes do JRE incluem a máquina virtual Java (JVM), bibliotecas de classe Java e o carregador de classes Java. Os JDKs são usados para desenvolver softwares Java, os JREs oferecem ferramentas de programação e tecnologias de implantação, e as JVMs executam programas nessa linguagem.
 
-  ### Custos 
-   Como custo, sabemos que a linguagem é gratuita, sendo possível para qualquer pessoa ou equipe utilizar. Logo temos como custo, a mão de obra, a infraestrutura e principalmente o tempo. Existem profissionais especializados em calcular o custo de um serviço e esses são essenciais para qualquer equipe. Dessa forma, o custo final vai depender de vários fatores, como os citados acima. 
-
 ## Capacidades da Linguagem
 
   ### Metaprogramação
@@ -371,13 +368,34 @@ Os componentes do JRE incluem a máquina virtual Java (JVM), bibliotecas de clas
   
   Em Java, toda exceção é um objeto e existem classes prontas para o tratamento das mais variadas exceções. A superclasse de todas as exceções de Java é a classe java.lang.Throwable. Todos os objetos dessa classe ou de suas subclasses podem ser gerados ou capturados por meio do tratamento de exceções e assim facilitando o processo de tratar exceções e também tornando mais fácil sua visualização.
   
-  + Concorrência e Threading 
-  + Custos
-  _Custos aqui ... _
+  #### Concorrência e Threading 
+  Multithreading é um recurso Java que permite a execução simultânea de duas ou mais partes de um programa para utilização máxima da CPU. Cada parte desse programa é chamada de thread. Portanto, os threads são processos leves dentro de um processo. Threads podem ser usados para realizar tarefas complicadas em segundo plano, sem interromper o programa principal. Na linguagem, threads podem ser criados usando dois mecanismos:
+  + Estendendo a classe Thread
+  + Implementando a Interface Executável
+  
+  #### Custos 
+   Como custo, sabemos que a linguagem é gratuita, sendo possível para qualquer pessoa ou equipe utilizar. Logo temos como custo, a mão de obra, a infraestrutura e principalmente o tempo. Existem profissionais especializados em calcular o custo de um serviço e esses são essenciais para qualquer equipe. Dessa forma, o custo final vai depender de vários fatores, como os citados acima. 
 
 ## Produtividade do Desenvolvedor
-  + Frameworks e Contâiners
-  + Ferramentas Disponíveis
+
+  ### Frameworks e Contâiners
+   #### Frameworks
+   Frameworks Java são grupos de códigos previamente escritos usados pelos desenvolvedores para criar aplicações por meio da linguagem de programação Java. 
+   
+   Frameworks Java são específicos a essa linguagem de programação. Eles são uma plataforma específica para desenvolver aplicações de software e programas Java.
+
+   Frameworks Java são grupos de códigos previamente escritos e reutilizáveis, usados como templates pelos desenvolvedores na criação de aplicações. Esses frameworks elimina o trabalho manual excessivo ao programar uma aplicação uma vez que os desenvolvedores só precisam incluir código personalizado se for necessário.
+
+   Os frameworks Java podem incluir funções e classes predefinidas (como categorias de objetos), que são usadas para processar, inserir e gerenciar dispositivos de hardware, além de interagir com o software do sistema. Isso depende do tipo de framework, da habilidade do desenvolvedor Java, do que ele está tentando realizar e das preferências pessoais dele.
+   
+   #### Contâiners
+   Dificilmente uma aplicação gráfica é composta por um único componente, mas sim por vários componentes inter-relacionados. Para este tipo de aplicação, um componente fundamental é a área onde os demais componentes da aplicação estarão dispostos. Um componente que pode conter outros componentes é denominado um container.
+
+   Em Java, a classe Container é a classe abstrata que define as funcionalidades básicas associadas a um container, tais como adicionar e remover componentes, o que é possível através dos métodos add() e remove(), respectivamente. É possível também estabelecer qual a estratégia de disposição de componentes no container, ou seja, qual o método de gerência de layout, através do método setLayout().
+  
+  ### Ferramentas Disponíveis
+   Existem uma infinidade de ferramentas disponíveis para a linguagem, que podem auxiliar o desenvolvedor na entrega de um produto muito melhor, facilitando e melhorando diversas etapas do desenvolvimento de um software. Podemos citar ferramentas que auxiliam na compilação, configuração e deploy de aplicações, como o Eclipse, pois faz uso de um script ou XML, mas o usuário normalmente não tem conhecimento do que está ocorrendo por trás. Ou ferramentas que auxiliam nos testes de software, como o JUnit, que facilitam na manutenção e segurança do código.
+  
   + Sintaxe, Semântica e Operações Predefinidas
     + Legibilidade
     + Redigibilidade
@@ -418,3 +436,7 @@ Os componentes do JRE incluem a máquina virtual Java (JVM), bibliotecas de clas
 20. https://pt.stackoverflow.com/questions/364945/o-que-%C3%A9-um-c%C3%B3digo-escal%C3%A1vel
 21. https://tableless.com.br/java-principais-caracteristicas/
 22. http://ttechtecnologia.blogspot.com/2013/08/confiabilidade-e-tratamento-de-excecoes.html
+23. https://www.geeksforgeeks.org/multithreading-in-java/
+24. https://www.redhat.com/pt-br/topics/cloud-native-apps/what-is-a-Java-framework
+25. https://www.dca.fee.unicamp.br/cursos/PooJava/graphic/containers.html
+26. https://www.devmedia.com.br/principais-ferramentas-de-apoio-ao-desenvolvimento-java/34126
