@@ -342,7 +342,7 @@ Nem todas as expressões são permitidas nas cláusulas de guarda, mas apenas al
  Vale ressaltar que no Elixir não existem loops, as repetições são feitas por recursão.
 	
  ####  Legibilidade e Redigibilidade
-  A linguagem tem uma sintaxe com boa legibilidade, com possibilidades para boas melhoras. Assim como o Ruby, linguagem que foi uma inspiração, possui um design moderno, que permite escrever programas de modo natural ao problema. Tal fato pode ser notado em situações como não precisar utilizar o retorno explicito em funções ou utilizar Pparênteses obrigatoriamente. Existem ainda opções para tornar o código mais legível como o piper operator, que torna a legbilidade consideravelmente mais alta.
+  A linguagem tem uma sintaxe com boa legibilidade, com possibilidades para boas melhoras. Assim como o Ruby, linguagem que foi uma inspiração, possui um design moderno, que permite escrever programas de modo natural ao problema. Tal fato pode ser notado em situações como não precisar utilizar o retorno explicito em funções ou utilizar parênteses obrigatoriamente. Existem ainda opções para tornar o código mais legível como o piper operator, que torna a legbilidade consideravelmente mais alta.
 
 ## Ecossistema
 	
