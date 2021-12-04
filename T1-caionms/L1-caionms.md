@@ -323,6 +323,14 @@ Os componentes do JRE incluem a máquina virtual Java (JVM), bibliotecas de clas
 	}	
    Temos então uma classe que possui um modificador de visibilidade (public, private, default ou protected), seu nome, uma possível super classe e possíveis interfaces. No contéudo da classe, temos um atributo que possui também um modificador, seu tipo e seu nome, podendo ser instânciado um valor default (= "teste"). Temos também, um método que possui seu modificador, seu tipo de retorno e um nome, podendo ter parâmetros entre parênteses. Dentro do método, caso seu tipo de retorno não seja void, é preciso retornar um valor nulo ou do mesmo tipo do retorno.
    
+   Para instanciarmos a classe e criarmos um objeto, podemos fazer da seguinte forma:
+   
+   	public class Main {
+   		public static void main(String[] args) throws IOException {
+        		NomeClasse classe = new NomeClasse("valor do atributo");
+    		}
+	}
+   
    #### Estruturas de controle
 
 <body>
@@ -426,11 +434,6 @@ Os componentes do JRE incluem a máquina virtual Java (JVM), bibliotecas de clas
 		O comando continue tem a função de pular direto para final do laço, mas em vez de interromper o laço como no break, ele continua executando o próximo passo do laço. Não vamos ficar estudando o uso de continue por ser puco usual na programação estruturada. 
 	</p>
 </body>
-
-  
-    + Legibilidade
-    + Redigibilidade
-  + Custos 
 
 ## Ecossistema
   + Maturidade
