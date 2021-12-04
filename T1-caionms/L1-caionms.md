@@ -435,16 +435,24 @@ Os componentes do JRE incluem a máquina virtual Java (JVM), bibliotecas de clas
 	</p>
 </body>
 
+### Legibilidade e Regibilidade
+ O código-fonte é lido tanto pelo compilador, que não se preocupa com seu estilo de escrita, quanto pelas pessoas, que se importam enormemente com seu estilo de escrita. TODOS os programadores profissionais insistem que certas regras de legibilidade devem ser seguidas. Alguns dos mais importantes são:
+  + ** Recuo: ** As instruções contidas em uma classe, um método, um loop, etc, devem ser indentadas à direita. Existem dois estilos comuns de indentação: Allman e K&R; use um deles.
+  + ** Espaço em branco: ** Assim como usar parágrafo e espaçamento entre palavras corretos em línguas naturais torna-os muito mais fáceis de ler, o uso apropriado de linhas em branco e espaçamento interno em uma declaração pode torná-los muito mais legíveis. Alguns IDEs, como o NetBeans, irão recuar seu programa em qualquer um dos estilos.
+  + ** Nomes com significados: ** Variáveis, métodos, classes, etc. devem ter nomes que signifiquem algo para o leitor. Use apenas nomes como "a", "b" e "c" quando não houver nenhum significado inerente em uma variável - é apenas um número abstrato. Veja Nomes para uma discussão mais detalhada.
+  + ** Simplicidade: ** Sempre tente tornar o programa o mais simples possível. Resista à tentação de ser inteligente. Em algumas situações, a forma mais exlusiva ou mais rápida para se resolver um problema pode não ser a mais lara para a maioria dos programadores.
+  + ** As convenções são importantes a seguir: ** Existem nomenclatura, formatação, documentação e convenções de uso padrão para Java. O uso dessas convenções torna o código-fonte do programa muito mais fácil para outras pessoas lerem.
+
 ## Ecossistema
-  + Maturidade
-  + Comunidade
-  + Governança
-  + Fragmentação
 
----
-
-## Informações Adicionais
-
+  ### Maturidade
+   Por ser uma linguagem antiga, podemos considerar que por todos os avanços e atualizações, ela tem uma boa maturidade. Com o passar do tempo, não só linguagem, mas os produtos no ramo da tecnologia em geral, tendem a evoluir e o Java não foge disso.
+  
+  ### Comunidade
+   Pelo tempo que a linguagem tem de "vida" e por quão popular ela se tornou em todo mundo, é fácil notar que sua comunidade vai ser gigantesca. É muito fácil encontrar tópicos e debates sobre assuntos da linguagem, facilitando para novos adeptos da linguagem. Com qualquer busca rápida é possível encontrar diversos materiais de ótima qualidade sobre a linguagem Java.
+  
+  ### Governança
+   Como dito mais acima no documento, o Java foi adquirido pela Oracle Corporation em meados de 2008 e continua sendo mantida por ela.
 
 ## Referências 
 
@@ -475,3 +483,4 @@ Os componentes do JRE incluem a máquina virtual Java (JVM), bibliotecas de clas
 25. https://www.dca.fee.unicamp.br/cursos/PooJava/graphic/containers.html
 26. https://www.devmedia.com.br/principais-ferramentas-de-apoio-ao-desenvolvimento-java/34126
 27. https://developer.ibm.com/br/tutorials/j-introtojava1/
+28. https://perso.ensta-paris.fr/~diam/java/online/notes-java/principles_and_practices/style/readability.html
